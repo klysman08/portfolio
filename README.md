@@ -1,7 +1,3 @@
-<a href="https://garaven.vercel.app"><img src="./public/images/readme.png" alt="Portfolio displayed on different devices" width="100%"></a>
-<hr>
-
-
 ## **Project structure**
 ```
 public/
