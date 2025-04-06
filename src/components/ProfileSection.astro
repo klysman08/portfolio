@@ -6,8 +6,28 @@
   <!-- inpute a image in the center from https://store.steampowered.com/app/707300/Hatsune_Miku_VR/ -->
   <img src="https://media.tenor.com/AIHWOa8aHFAAAAAi/miku-hatsune.gif" alt="Hatsune Miku" style="margin-left: -100px;" />
 
-  <audio autoplay onloadedmetadata="this.volume=0.2">
+  <button id="playButton" class="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+    Play Music
+  </button>
+
+  <audio id="mikuAudio" onloadedmetadata="this.volume=0.2">
     <source src="https://s3.detakai.com/songs/Hatsune%20Miku%20_Ten%20Thousand%20Stars_.mp3" type="audio/mpeg">
   </audio>
 
+  <script>
+    const audio = document.getElementById('mikuAudio') as HTMLAudioElement | null;
+    const playButton = document.getElementById('playButton') as HTMLButtonElement | null;
+
+    if (audio && playButton) {
+      playButton.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          playButton.textContent = 'Pause Music';
+        } else {
+          audio.pause();
+          playButton.textContent = 'Play Music';
+        }
+      });
+    }
+  </script>
 </div>
